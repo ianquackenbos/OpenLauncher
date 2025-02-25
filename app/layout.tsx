@@ -1,25 +1,19 @@
 "use client"
 
+import "./globals.css"
 import Image from "next/image"
 import Link from "next/link"
 import { useState, type ReactNode } from "react"
 import { ThemeProvider } from "next-themes"
 import WorkspacePanel from "@/components/workspace-panel"
 import { ThemeToggle } from "@/components/theme-toggle"
+import { quicksand, suse } from './fonts'
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const [showWorkspacePanel, setShowWorkspacePanel] = useState(false)
 
   return (
-    <html lang="en" suppressHydrationWarning>
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=SUSE:wght@100..800&display=swap"
-          rel="stylesheet"
-        />
-      </head>
+    <html lang="en" suppressHydrationWarning className={`${quicksand.variable} ${suse.variable}`}>
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen bg-background text-foreground">
@@ -92,7 +86,5 @@ export default function RootLayout({ children }: { children: ReactNode }) {
     </html>
   )
 }
-
-import "./globals.css"
 
 

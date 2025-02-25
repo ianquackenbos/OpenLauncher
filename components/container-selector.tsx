@@ -8,9 +8,15 @@ import { Button } from "@/components/ui/button"
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible"
 import { TooltipProvider } from "@/components/ui/tooltip"
 
-export default function ComponentSelector() {
-  const [pythonVersion, setPythonVersion] = useState("3.10")
-  const [cudaVersion, setCudaVersion] = useState("12.0.1")
+// Simplified interface without strict typing
+interface ContainerItem {
+  name: string;
+  icon: any;  // Changed to any to avoid type issues
+  description: string;
+  checkmark?: boolean;
+}
+
+export default function ContainerSelector() {
   const [isCredentialsOpen, setIsCredentialsOpen] = useState(false)
   const [selectedItems, setSelectedItems] = useState<{ [key: string]: string[] }>({
     suse: [],
@@ -104,7 +110,7 @@ export default function ComponentSelector() {
     })
   }
 
-  const renderItem = (section: string, item: any) => (
+  const renderItem = (section: string, item: ContainerItem) => (
     <div
       key={item.name}
       className={`relative border-2 rounded-lg p-6 transition-colors cursor-pointer ${
@@ -129,7 +135,7 @@ export default function ComponentSelector() {
     </div>
   )
 
-  const renderSection = (title: string, items: any[], section: string) => (
+  const renderSection = (title: string, items: ContainerItem[], section: string) => (
     <div>
       <h2 className="text-xl font-semibold mb-4">{title}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">

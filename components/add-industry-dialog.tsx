@@ -10,6 +10,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Plus } from "lucide-react"
 import * as Icons from "lucide-react"
 import React from "react"
+import { LucideIcon } from 'lucide-react'
 
 const iconOptions = [
   { value: "Briefcase", label: "Briefcase" },
@@ -29,7 +30,7 @@ interface AddIndustryDialogProps {
     id: string
     title: string
     description: string
-    icon: keyof typeof Icons
+    icon: LucideIcon
   }) => void
 }
 
@@ -43,11 +44,12 @@ export function AddIndustryDialog({ onAddIndustry }: AddIndustryDialogProps) {
     e.preventDefault()
     if (title && description && selectedIcon) {
       const id = title.toLowerCase().replace(/\s+/g, "-")
+      const IconComponent = Icons[selectedIcon as keyof typeof Icons] as LucideIcon
       onAddIndustry({
         id,
         title,
         description,
-        icon: selectedIcon as keyof typeof Icons,
+        icon: IconComponent,
       })
       setOpen(false)
       setTitle("")

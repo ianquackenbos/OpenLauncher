@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button"
 import { Sheet, SheetContent, SheetHeader, SheetTitle } from "@/components/ui/sheet"
 import { Copy, AlertOctagon } from "lucide-react"
+import Image from 'next/image'
 
 interface WorkspacePanelProps {
   isOpen: boolean
@@ -41,11 +42,23 @@ export default function WorkspacePanel({ isOpen, onClose }: WorkspacePanelProps)
             </p>
             <div className="flex space-x-4 mb-4">
               <Button variant="outline" className="bg-secondary border-border hover:bg-accent text-foreground">
-                <img src="/placeholder.svg?height=20&width=20" className="mr-2 h-5 w-5" alt="AWS" />
+                <Image
+                  src="/placeholder.svg?height=20&width=20"
+                  alt="AWS"
+                  width={20}
+                  height={20}
+                  className="mr-2 h-5 w-5"
+                />
                 Connect AWS
               </Button>
               <Button variant="outline" className="bg-secondary border-border hover:bg-accent text-foreground">
-                <img src="/placeholder.svg?height=20&width=20" className="mr-2 h-5 w-5" alt="GCP" />
+                <Image
+                  src="/placeholder.svg?height=20&width=20"
+                  alt="GCP"
+                  width={20}
+                  height={20}
+                  className="mr-2 h-5 w-5"
+                />
                 Connect GCP
               </Button>
             </div>
@@ -63,7 +76,13 @@ export default function WorkspacePanel({ isOpen, onClose }: WorkspacePanelProps)
             <div className="bg-card p-3 rounded-lg border border-border">
               <div className="flex items-start space-x-3">
                 <div className="w-8 h-8 bg-accent rounded flex items-center justify-center">
-                  <img src="/placeholder.svg?height=24&width=24" alt="NVIDIA" />
+                  <Image
+                    src="/placeholder.svg?height=24&width=24"
+                    alt="NVIDIA"
+                    width={24}
+                    height={24}
+                    className="w-6 h-6"
+                  />
                 </div>
                 <div className="flex-1">
                   <p className="text-sm font-medium">Paperspace Gradient</p>

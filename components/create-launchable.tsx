@@ -81,7 +81,7 @@ export default function CreateLaunchable() {
                   Add a Github/Gitlab repository or jupyter notebook to your launchable
                 </p>
                 <p className="text-sm text-muted-foreground dark:text-white mb-6">
-                  (You'll be able to access a JupyterLab regardless if you upload a file or not)
+                  (You&apos;ll be able to access a JupyterLab regardless if you upload a file or not)
                 </p>
               </div>
               <div className="space-y-4">
