@@ -2,20 +2,183 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: 0 0% 100%;
+    --foreground: 162 61% 12%;
+    --card: 0 0% 98%;
+    --card-foreground: 162 61% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 162 61% 12%;
+    --primary: 84 100% 41%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 162 61% 12%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+    --accent: 84 100% 41%;
+    --accent-foreground: 162 61% 12%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 84 100% 41%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222 18% 11%;
+    --foreground: 210 40% 98%;
+    --card: 222 18% 12%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 18% 11%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 18% 11%;
+    --secondary: 222 18% 14%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 222 18% 14%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 222 18% 14%;
+    --accent-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 222 18% 15%;
+    --input: 222 18% 15%;
+    --ring: 222 18% 14%;
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Quicksand", sans-serif;
+  }
 }
+
+/* Font Classes */
+.font-suse {
+  font-family: "SUSE", sans-serif;
+}
+
+.font-quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+
+/* Quicksand Font Weight Utilities */
+.quicksand-light {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.quicksand-regular {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.quicksand-medium {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.quicksand-semibold {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.quicksand-bold {
+  font-family: "Quicksand", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+/* SUSE Font Weight Utilities */
+.suse-thin {
+  font-family: "SUSE", serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.suse-extralight {
+  font-family: "SUSE", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.suse-light {
+  font-family: "SUSE", serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.suse-regular {
+  font-family: "SUSE", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.suse-medium {
+  font-family: "SUSE", serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.suse-semibold {
+  font-family: "SUSE", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.suse-bold {
+  font-family: "SUSE", serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.suse-extrabold {
+  font-family: "SUSE", serif;
+  font-optical-sizing: auto;
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Dark mode specific styles */
+.dark .dark-hover:hover {
+  @apply bg-secondary/80;
+}
+
+.dark .dark-active {
+  @apply bg-secondary;
+}
+
+.dark .dark-border {
+  @apply border-border;
+}
+
+.dark .dark-text {
+  @apply text-foreground;
+}
+
+.dark .dark-text-muted {
+  @apply text-muted-foreground;
+}
+
