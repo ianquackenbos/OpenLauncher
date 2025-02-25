@@ -28,15 +28,15 @@ const legalRecipes: Recipe[] = [
     frameworks: [
       {
         name: "OpenWebUI",
-        logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/user-UR7ALqFgNeBJKvOWNJgB8tRj72TIkh.png",
+        logo: "/user.png",
       },
       {
         name: "Ollama",
-        logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/st,small,507x507-pad,600x600,f8f8f8.jpg-rClYcvyxE59XU5TS6VbrPjhUBUFmkV.jpeg",
+        logo: "/ollama.jpg",
       },
       {
         name: "Milvus",
-        logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images-mQfX4Cl5A3WEtq2cjwi0Jn4bnK1hDx.png",
+        logo: "/milvus.png",
       },
     ],
     description:
@@ -49,15 +49,15 @@ const legalRecipes: Recipe[] = [
     frameworks: [
       {
         name: "OpenWebUI",
-        logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/user-UR7ALqFgNeBJKvOWNJgB8tRj72TIkh.png",
+        logo: "/user.png",
       },
       {
         name: "Ollama",
-        logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/st,small,507x507-pad,600x600,f8f8f8.jpg-rClYcvyxE59XU5TS6VbrPjhUBUFmkV.jpeg",
+        logo: "/ollama.jpg",
       },
       {
         name: "Milvus",
-        logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images-mQfX4Cl5A3WEtq2cjwi0Jn4bnK1hDx.png",
+        logo: "/milvus.png",
       },
     ],
     description:
@@ -70,15 +70,15 @@ const legalRecipes: Recipe[] = [
     frameworks: [
       {
         name: "OpenWebUI",
-        logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/user-UR7ALqFgNeBJKvOWNJgB8tRj72TIkh.png",
+        logo: "/user.png",
       },
       {
         name: "Ollama",
-        logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/st,small,507x507-pad,600x600,f8f8f8.jpg-rClYcvyxE59XU5TS6VbrPjhUBUFmkV.jpeg",
+        logo: "/ollama.jpg",
       },
       {
         name: "Milvus",
-        logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/images-mQfX4Cl5A3WEtq2cjwi0Jn4bnK1hDx.png",
+        logo: "/milvus.png",
       },
     ],
     description:
