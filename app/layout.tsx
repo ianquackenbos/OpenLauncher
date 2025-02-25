@@ -2,29 +2,16 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { useState, type ReactNode, useEffect } from "react"
+import { useState, type ReactNode } from "react"
 import { ThemeProvider } from "next-themes"
 import WorkspacePanel from "@/components/workspace-panel"
 import { ThemeToggle } from "@/components/theme-toggle"
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   const [showWorkspacePanel, setShowWorkspacePanel] = useState(false)
-  const [theme, setTheme] = useState<string | undefined>(undefined)
-
-  useEffect(() => {
-    // Check if there's a theme in localStorage
-    const storedTheme = localStorage.getItem("theme")
-    if (storedTheme) {
-      setTheme(storedTheme)
-    } else {
-      // If no theme is stored, check the system preference
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-      setTheme(prefersDark ? "dark" : "light")
-    }
-  }, [])
 
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -34,7 +21,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
       </head>
       <body>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem forcedTheme={theme}>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <div className="min-h-screen bg-background text-foreground">
             {/* Navigation */}
             <nav className="bg-suse-green border-b border-suse-mint/20">
@@ -86,7 +73,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
                   </div>
                 </div>
                 <div className="flex items-center space-x-4">
-                  <ThemeToggle theme={theme} setTheme={setTheme} />
+                  <ThemeToggle />
                   <button
                     onClick={() => setShowWorkspacePanel(true)}
                     className="text-white hover:text-white/80 transition-colors font-quicksand text-base"
